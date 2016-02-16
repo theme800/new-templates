@@ -1,0 +1,31 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/skel';
+
+/*
+	Waypoint by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Basic */
+
+	.button, .bubble-top {
+		position: relative;
+		-ms-behavior: url('assets/js/ie/PIE.htc');
+	}
+
+/* Nav */
+
+	.dropotron.level-0:before {
+		display: none;
+	}
+
+/* Slidertron */
+
+	#slider {
+		.previous-button, .next-button {
+			-ms-behavior: url('assets/js/ie/PIE.htc');
+		}
+	}
