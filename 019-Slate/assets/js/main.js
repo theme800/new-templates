@@ -1,9 +1,4 @@
-/*
-	Slate by Pixelarity
-	pixelarity.com @pixelarity
-	License: pixelarity.com/license
-*/
-
+ 
 
 var settings = {
 

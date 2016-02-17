@@ -1,9 +1,3 @@
-/*
-	Waypoint by Pixelarity
-	pixelarity.com @pixelarity
-	License: pixelarity.com/license
-*/
-
 (function($) {
 
 	skel
