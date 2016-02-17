@@ -1,0 +1,50 @@
+/*
+	Tactile by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Wrapper */
+
+	.wrapper {
+		@include padding(5em, 0);
+		position: relative;
+
+		> .inner {
+			margin: 0 auto;
+			max-width: _size(inner);
+			width: 100%;
+
+			&.narrow {
+				max-width: _size(inner-narrow);
+			}
+		}
+
+		&.alt {
+			padding: 0;
+		}
+
+		&.style1 {
+			@include color(accent1);
+		}
+
+		&.style2 {
+			@include color(accent2);
+		}
+
+		@include breakpoint(large) {
+			@include padding(4em, 2em);
+		}
+
+		@include breakpoint(medium) {
+			@include padding(4em, 2em);
+		}
+
+		@include breakpoint(small) {
+			@include padding(3.5em, 2em);
+		}
+
+		@include breakpoint(xsmall) {
+			@include padding(3em, 2em);
+		}
+	}

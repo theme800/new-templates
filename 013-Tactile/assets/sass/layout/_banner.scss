@@ -1,0 +1,109 @@
+/*
+	Tactile by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Banner */
+
+	#banner {
+		@include color-typography(accent4);
+		@include color-button(accent4);
+		@include vendor('display', 'flex');
+		@include vendor('flex-direction', 'column');
+		@include vendor('justify-content', 'center');
+		@include vendor('align-items', 'center');
+		@include padding(4em, 0);
+		background-image: linear-gradient(rgba(#000, 0.3), rgba(#000, 0.3)), url('../../images/banner.jpg');
+		background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+		height: calc(100vh - 3.125em);
+		min-height: 30em;
+		text-align: center;
+
+		> .inner {
+			position: relative;
+			display: inline-block;
+			max-width: 100%;
+			padding: 0 2em;
+			z-index: 1;
+
+			> * {
+				@include vendor('transition', (
+					'transform 0.75s ease',
+					'opacity 0.75s ease',
+					'filter 0.25s ease'
+				));
+				@include vendor('transform', 'translateY(0)');
+				@include vendor('filter', 'blur(0)');
+				opacity: 1;
+			}
+
+			@for $i from 1 through 5 {
+				$j: 0.2 * ($i - 1);
+
+				> :nth-child(#{$i}) {
+					@include vendor('transition-delay', '#{$j}s');
+				}
+			}
+		}
+
+		h2 {
+			font-size: 2em;
+		}
+
+		p {
+			font-size: 1.25em;
+			margin-bottom: 1.75em;
+		}
+
+		.button {
+			min-width: 15em;
+		}
+
+		&:after {
+			@include vendor('transition', 'opacity 1s ease');
+			content: '';
+			display: block;
+			background: _palette(accent4, bg);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+		}
+
+		body.is-loading & {
+			> .inner {
+				> * {
+					@include vendor('transform', 'translateY(0.35em)');
+					@include vendor('filter', 'blur(1px)');
+					opacity: 0;
+				}
+			}
+
+			&:after {
+				opacity: 1;
+			}
+		}
+
+		@include breakpoint(large) {
+			background-attachment: scroll;
+		}
+
+		@include breakpoint(medium) {
+			height: calc(100vh - 44px);
+		}
+
+		@include breakpoint(small) {
+			h2 {
+				font-size: 1.5em;
+			}
+
+			p {
+				font-size: 1.1em;
+			}
+		}
+	}

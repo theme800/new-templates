@@ -1,0 +1,84 @@
+/*
+	Tactile by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Features */
+
+	.features {
+		@include vendor('display', 'flex');
+		@include vendor('flex-wrap', 'wrap');
+		@include vendor('justify-content', 'center');
+		margin-bottom: 0;
+		list-style: none;
+		padding: 0;
+		width: 100%;
+
+		> li {
+			@include padding(4em, 4em);
+			width: 50%;
+
+			> .content {
+				max-width: ((_size(inner) / 2) - 4em);
+			}
+
+			&:nth-child(odd) {
+				> .content {
+					float: right;
+				}
+			}
+
+			@for $i from 1 through _misc(max-features) {
+				$j: 0.035 * $i;
+
+				&:nth-child(#{$i}) {
+					background-color: rgba(0,0,0, $j);
+				}
+			}
+
+			@include breakpoint(medium) {
+				@include padding(3em, 2em);
+				text-align: center;
+
+				.major {
+					&:after {
+						margin-left: auto;
+						margin-right: auto;
+					}
+
+					&.icon {
+						margin-bottom: (_size(element-margin) / 2);
+					}
+				}
+			}
+
+			@include breakpoint(small) {
+				@include padding(3em, 3em);
+				background-color: transparent !important;
+				border-top-style: solid;
+				border-top-width: (_size(border-width) * 2);
+				width: 100%;
+
+				&:first-child {
+					border-top: 0;
+				}
+			}
+
+			@include breakpoint(xsmall) {
+				@include padding(3em, 2em);
+			}
+		}
+	}
+
+	@mixin color-features($p: null) {
+		$highlight: _palette($p, highlight);
+
+		.features {
+			> li {
+				border-top-color: _palette($p, border-bg);
+			}
+		}
+	}
+
+	@include color-features;

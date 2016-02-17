@@ -1,0 +1,52 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+
+/*
+	Strongly Typed by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Basic */
+
+	form {
+		input[type="text"],
+		input[type="email"],
+		input[type="password"],
+		select,
+		textarea {
+			position: relative;
+			-ms-behavior: url('assets/js/ie/PIE.htc');
+		}
+	}
+
+	input[type="button"],
+	input[type="submit"],
+	input[type="reset"],
+	button,
+	.button {
+		position: relative;
+		-ms-behavior: url('assets/js/ie/PIE.htc');
+	}
+
+	.button, .box.excerpt .date {
+		position: relative;
+		-ms-behavior: url('assets/js/ie/PIE.htc');
+	}
+
+/* Sections/Article */
+
+	section, article {
+		> .last-child, &.last-child {
+			margin-bottom: 0;
+		}
+	}
+
+/* Wrappers */
+
+	#banner-wrapper {
+		.inner {
+			-ms-behavior: url('assets/js/ie/backgroundsize.min.htc');
+		}
+	}

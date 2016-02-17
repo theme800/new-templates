@@ -1,0 +1,51 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/skel';
+
+/*
+	Tactile by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
+	.button {
+		position: relative;
+		-ms-behavior: url('assets/js/ie/PIE.htc');
+	}
+
+/* Image */
+
+	.image {
+		img {
+			-ms-behavior: url('assets/js/ie/PIE.htc');
+		}
+	}
+
+/* Banner */
+
+	#banner {
+		-ms-behavior: url('assets/js/ie/backgroundsize.min.htc');
+
+		&:after {
+			display: none;
+		}
+	}
+
+/* Main */
+
+	#main {
+		> header {
+			-ms-behavior: url('assets/js/ie/backgroundsize.min.htc');
+
+			&:after {
+				display: none;
+			}
+		}
+	}

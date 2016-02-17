@@ -1,0 +1,129 @@
+/*
+	Tactile by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
+	.button {
+		@include vendor('appearance', 'none');
+		@include vendor('transition', 'background-color #{_duration(transition)} ease-in-out, color #{_duration(transition)} ease-in-out');
+		border-radius: _size(border-radius);
+		border-style: solid;
+		border-width: _size(border-width);
+		cursor: pointer;
+		display: inline-block;
+		font-weight: _font(weight-bold);
+		height: 3.25em;
+		letter-spacing: _font(spacing-wide);
+		line-height: 3.35em;
+		overflow: hidden;
+		padding: 0 1.75em;
+		text-align: center;
+		text-decoration: none;
+		text-overflow: ellipsis;
+		text-transform: uppercase;
+		white-space: nowrap;
+
+		&.icon {
+			padding-left: 1.35em;
+
+			&:before {
+				margin-right: 0.5em;
+			}
+		}
+
+		&.fit {
+			display: block;
+			margin: 0 0 (_size(element-margin) * 0.5) 0;
+			width: 100%;
+		}
+
+		&.small {
+			font-size: 0.8em;
+		}
+
+		&.big {
+			font-size: 1.15em;
+			padding: 0 3.5em;
+		}
+
+		&.disabled,
+		&:disabled {
+			@include vendor('pointer-events', 'none');
+			opacity: 0.25;
+		}
+
+		@include breakpoint(xsmall) {
+			padding: 0;
+		}
+	}
+
+	@mixin color-button($p: null) {
+		$highlight: _palette($p, highlight);
+
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"],
+		button,
+		.button {
+
+			background-color: transparent;
+			border-color: _palette($p, border);
+			color: _palette($p, fg-bold) !important;
+
+			&:hover {
+				background-color: _palette($p, border-bg);
+			}
+
+			&:active {
+				background-color: _palette($p, border2-bg);
+			}
+
+			&.icon {
+				&:before {
+					color: _palette($p, fg-bold);
+				}
+			}
+
+			&.special {
+				border: none;
+
+				@if $p == $highlight {
+					background-color: _palette($p, fg-bold);
+					color: _palette($p, bg) !important;
+
+					&.icon {
+						&:before {
+							color: _palette($p, bg);
+						}
+					}
+				}
+				@else {
+					background-color: _palette($highlight, bg);
+					color: _palette($highlight, fg-bold) !important;
+
+					&:hover {
+						background-color: lighten(_palette($highlight, bg), 5);
+					}
+
+					&:active {
+						background-color: darken(_palette($highlight, bg), 5);
+					}
+
+					&.icon {
+						&:before {
+							color: _palette($highlight, fg-bold);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include color-button;

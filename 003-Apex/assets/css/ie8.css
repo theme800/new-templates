@@ -1,0 +1,27 @@
+ /* Wrappers */
+ 
+ #banner-wrapper:before {
+     display: none;
+ }
+ /* Content */
+ 
+ #content > section,
+ #content > article {
+     margin-top: 7.5em;
+     margin-bottom: 0;
+ }
+ 
+ #content > section:first-child,
+ #content > article:first-child {
+     margin-top: 0;
+ }
+ /* Sidebar */
+ 
+ #sidebar > section {
+     margin-top: 5em;
+     margin-bottom: 0;
+ }
+ 
+ #sidebar > section:first-child {
+     margin-top: 0;
+ }

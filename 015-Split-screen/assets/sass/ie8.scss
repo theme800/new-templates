@@ -1,0 +1,49 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/skel';
+
+/*
+	Split Screen by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
+	.button {
+		position: relative;
+		-ms-behavior: url('assets/js/ie/PIE.htc');
+	}
+
+/* Banner */
+
+	#banner {
+		width: 35%;
+
+		ul {
+			&:after {
+				display: none;
+			}
+		}
+
+		.content {
+			&:before {
+				background-color: _palette(bg-alt);
+			}
+
+			&:after {
+				background-color: _palette(bg-alt);
+			}
+		}
+	}
+
+/* Wrapper */
+
+	#wrapper {
+		left: 35%;
+	}

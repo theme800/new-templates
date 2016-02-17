@@ -1,0 +1,25 @@
+/*
+	Transition by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Basic */
+
+	hr {
+		border: solid 1px #ccc;
+	}
+
+	.nicescroll-cursor {
+		background: #ccc;
+	}
+
+/* Main */
+
+	#main .previous, #main .next {
+		background: none !important;
+	}
+
+	#main .viewer .reel .slide article:after {
+		display: none;
+	}

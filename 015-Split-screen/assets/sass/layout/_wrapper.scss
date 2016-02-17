@@ -1,0 +1,104 @@
+///
+/// Split Screen by HTML5 UP
+/// html5up.net | @n33co
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Wrapper */
+
+	#wrapper {
+		@include padding(4.5em, 4.5em);
+		@include vendor('display', 'flex');
+		@include vendor('flex-direction', 'column');
+		@include vendor('justify-content', 'space-between');
+		width: 65vw;
+
+		&:before {
+			content: '';
+		}
+
+		.inner {
+			max-width: 30em;
+		}
+
+		footer {
+			color: _palette(fg-light);
+
+			ul {
+				margin: 0;
+			}
+		}
+
+		> * {
+			@include vendor('transition', (
+				'opacity #{_duration(load)} ease',
+				'transform #{_duration(load)} ease'
+			));
+			@include vendor('transform', 'translateX(0) translateY(0)');
+			opacity: 1;
+		}
+
+		@include breakpoint(large) {
+			@include padding(4.5em, 4em);
+		}
+
+		@include breakpoint(medium) {
+			@include padding(4em, 4em);
+
+			@include orientation(portrait) {
+				.inner {
+					max-width: 28em;
+				}
+			}
+		}
+
+		@include breakpoint(small) {
+			@include padding(3em, 3em);
+			@include vendor('justify-content', 'flex-start');
+
+			footer {
+				ul {
+					margin: 0 0 _size(element-margin) 0;
+				}
+			}
+		}
+
+		@include breakpoint(xsmall) {
+			@include padding(3em, 2em);
+		}
+
+		@include breakpoint(xxsmall) {
+			@include padding(2em, 1.5em);
+		}
+
+		@include orientation(portrait) {
+			@include vendor('align-items', 'center');
+			text-align: center;
+			width: 100%;
+
+			.inner {
+				width: 100%;
+			}
+
+			footer {
+				margin: (_size(element-margin) * 0.25) 0 0 0;
+
+				ul {
+					margin: 0 0 _size(element-margin) 0;
+				}
+			}
+		}
+
+		body.is-loading & {
+			> * {
+				@include vendor('transform', 'translateX(0.5em)');
+				opacity: 0;
+			}
+
+			@include orientation(portrait) {
+				> * {
+					@include vendor('transform', 'translateY(0.5em)');
+				}
+			}
+		}
+	}

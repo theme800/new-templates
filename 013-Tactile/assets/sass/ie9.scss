@@ -1,0 +1,123 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/skel';
+
+/*
+	Tactile by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Banner */
+
+	#banner {
+		@include padding(8em, 0);
+		background-image: url('../../images/banner.jpg');
+		height: auto;
+		min-height: 0;
+
+		&:after {
+			content: '';
+			display: block;
+			background: _palette(accent4, bg);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0.3;
+		}
+	}
+
+/* Features */
+
+	.features {
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		> li {
+			display: block;
+			float: left;
+		}
+	}
+
+/* Spotlight */
+
+	.spotlight {
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		.image {
+			float: left;
+		}
+
+		.content {
+			@include padding(4em, 4em);
+			float: left;
+		}
+	}
+
+/* Footer */
+
+	#footer {
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		.about {
+			float: left;
+		}
+
+		.contact-info {
+			float: left;
+
+			&:after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+
+			ul {
+				float: left;
+			}
+		}
+
+		.copyright {
+			clear: both;
+		}
+	}
+
+
+/* Main */
+
+	#main {
+		> header {
+			background-image: url('../../images/banner.jpg');
+
+			&:after {
+				content: '';
+				display: block;
+				background: _palette(accent4, bg);
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0.3;
+			}
+
+			> * {
+				position: relative;
+				z-index: 1;
+			}
+		}
+	}

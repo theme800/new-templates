@@ -1,0 +1,97 @@
+/*
+	Tactile by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Spotlight */
+
+	.spotlight {
+		@include vendor('align-items', 'center');
+		@include vendor('display', 'flex');
+		border-bottom-style: solid;
+		border-bottom-width: _size(border-width);
+
+		.image {
+			@include vendor('order', '1');
+			border-radius: 0;
+			width: 40%;
+
+			img {
+				border-radius: 0;
+				width: 100%;
+			}
+		}
+
+		.content {
+			@include padding(2em, 4em);
+			@include vendor('order', '2');
+			max-width: 48em;
+			width: 60%;
+		}
+
+		&:nth-child(2n) {
+			@include vendor('flex-direction', 'row-reverse');
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		@include breakpoint(large) {
+			.image {
+				width: 45%;
+			}
+
+			.content {
+				width: 55%;
+			}
+		}
+
+		@include breakpoint(medium) {
+			border-bottom: none;
+			display: block;
+
+			.image {
+				display: block;
+				width: 100%;
+			}
+
+			.content {
+				@include padding(3em, 3em);
+				display: block;
+				max-width: none;
+				text-align: center;
+				width: 100%;
+
+				.major {
+					&:after {
+						margin-left: auto;
+						margin-right: auto;
+					}
+				}
+			}
+		}
+
+		@include breakpoint(small) {
+			.content {
+				@include padding(3em, 2em);
+			}
+		}
+
+		@include breakpoint(xsmall) {
+			.content {
+				@include padding(2.5em, 2em);
+			}
+		}
+	}
+
+	@mixin color-spotlight($p: null) {
+		$highlight: _palette($p, highlight);
+
+		.spotlight {
+			border-bottom-color: _palette($p, border);
+		}
+	}
+
+	@include color-spotlight;

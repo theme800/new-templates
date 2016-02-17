@@ -1,0 +1,40 @@
+/*
+	Tactile by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Icon */
+
+	.icon {
+		@include icon;
+		position: relative;
+
+		> .label {
+			display: none;
+		}
+
+		&.major {
+			display: block;
+			margin-bottom: _size(element-margin);
+
+			&:before {
+				font-size: 3.25em;
+				line-height: 1;
+			}
+		}
+	}
+
+	@mixin color-icon($p: null) {
+		$highlight: _palette($p, highlight);
+
+		.icon {
+			&.major {
+				&:before {
+					color: _palette($highlight, bg);
+				}
+			}
+		}
+	}
+
+	@include color-icon;

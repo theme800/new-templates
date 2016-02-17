@@ -1,0 +1,30 @@
+///
+/// Split Screen by HTML5 UP
+/// html5up.net | @n33co
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Page Wrapper */
+
+	#page-wrapper {
+		@include vendor('display', 'flex');
+		@include vendor('flex-direction', 'row-reverse');
+		@include vendor('align-items', 'stretch');
+		min-height: 100vh;
+
+		body.is-ie & {
+			height: 100vh;
+		}
+
+		@include breakpoint(medium) {
+			body.is-ie & {
+				height: auto;
+			}
+		}
+
+		@include orientation(portrait) {
+			@include vendor('flex-direction', 'column-reverse');
+			height: auto !important;
+			min-height: 0 !important;
+		}
+	}
