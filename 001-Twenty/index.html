@@ -5,8 +5,12 @@
     <title>Untitled</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="http://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link href="http://cdn.get3w.com/packages/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/skel.css" />
 </head>
 
 <body class="index">
@@ -16,12 +20,10 @@
             <h1 id="logo"><a href="index.html">Twenty <span>by get3w</span></a></h1>
             <nav id="nav">
                 <ul>
-                    <li class="current"><a href="index.html">Welcome</a></li>
                     <li><a href="left-sidebar.html">Left Sidebar</a></li>
                     <li><a href="right-sidebar.html">Right Sidebar</a></li>
                     <li><a href="no-sidebar.html">No Sidebar</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="#" class="button special">Sign Up</a></li>
                 </ul>
             </nav>
         </header>
@@ -171,16 +173,18 @@
     </article>
     <!-- CTA -->
     <section id="contact" style="background-image: url(images/banner.jpg); background-repeat: no-repeat; background-position: bottom center; background-size: cover; background-attachment: fixed;">
-        <header>
-            <h2>Velit mi ut adipiscing?</h2>
-            <p>Proin a ullamcorper elit, et sagittis turpis integer ut fermentum.</p>
-        </header>
-        <footer>
-            <ul class="buttons">
-                <li><a href="#" class="button special">Quam Ac Velit</a></li>
-                <li><a href="#" class="button">mus Sed</a></li>
-            </ul>
-        </footer>
+        <div class="cta">
+            <header>
+                <h2>Velit mi ut adipiscing?</h2>
+                <p>Proin a ullamcorper elit, et sagittis turpis integer ut fermentum.</p>
+            </header>
+            <footer>
+                <ul class="buttons">
+                    <li><a href="#" class="button special">Quam Ac Velit</a></li>
+                    <li><a href="#" class="button">mus Sed</a></li>
+                </ul>
+            </footer>
+        </div>
     </section>
     <!-- Footer -->
     <footer id="footer">
